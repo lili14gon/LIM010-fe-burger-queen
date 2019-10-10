@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-// import  Inicio from './componentes/inicio';
-import PedidoMesero from './componentes/mesero';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
 
@@ -15,11 +13,10 @@ const firebaseConfig = {
     storageBucket: "burger-queen-react-bls.appspot.com",
     messagingSenderId: "658478814346",
     appId: "1:658478814346:web:f4bf5219e89878fd114973"
-  };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+};
+firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<PedidoMesero />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
