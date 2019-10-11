@@ -2,8 +2,12 @@ import React from 'react';
 function Home() {
     return (
       <div> 
+      <header>Burguer queen</header>
+      <body>  
       <button>MESERO</button>
       <button>JEFE DE COCINA</button>
+      </body>
+      <footer>2019@Derechos Reservados</footer>
       </div>
     );
   }
