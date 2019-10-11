@@ -1,4 +1,29 @@
 import React from 'react';
+
+// const UseTime = () => {
+// const [price,setPrice]= useState('');
+
+// }
+// const OpcionDesayuno = () => {
+//     return(
+//         <div>
+//             <ul>
+//                 <p>PEDIDO</p>
+//                 <li>CAFE AMERICANO</li>
+//                 <li>CAFE CON LECHE</li>
+//                 <li>SÁNDWICH DE JAMÓN Y QUESO</li>
+//                 <li>JUGO DE FRUTAS NATURAL</li>
+//             </ul>
+//             <ul>
+//                 <p>COSTO</p>
+//                 <li>$5</li>
+//                 <li>$7</li>
+//                 <li>$10</li>
+//                 <li>$7</li>
+//             </ul>
+//         </div>
+//     );
+// }
 function About() {
   return (
         <div>
@@ -15,8 +40,11 @@ function About() {
         </div>
       );
   }
+  
+
 
 export default About;
+
 // const PedidoMesero = () => {
 //   return (
 //     <div>
