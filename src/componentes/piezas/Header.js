@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Logo() {
+function Header() {
   return (
         <div>
-      
+       <p>Burguer Queen</p>
         </div>
       );
   }
-export default Logo;
+export default Header;
