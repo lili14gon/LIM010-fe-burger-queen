@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 function Home() {
     return (
       <div> 
       <header>Burguer queen</header>
-      <body>  
-      <button>MESERO</button>
-      <button>JEFE DE COCINA</button>
+      <body> 
+      <button ><Link to ="/about">MESERO</Link></button>
+      <button><Link to ="/users">JEDE DE COCINA</Link></button>
       </body>
       <footer>2019@Derechos Reservados</footer>
       </div>
