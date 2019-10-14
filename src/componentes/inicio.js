@@ -2,12 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import  Footer from './piezas/Footer';
 import Header from './piezas/Header';
-import Logo from './piezas/Logo';
 function Home() {
     return (
       <div> 
       <Header/>
-      <Logo/>
       <body> 
       <button ><Link to ="/about">MESERO</Link></button>
       <button><Link to ="/users">JEDE DE COCINA</Link></button>
