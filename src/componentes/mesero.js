@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from './firebase';
 
 // const UseTime = () => {
 // const [price,setPrice]= useState('');
@@ -24,7 +25,32 @@ import React from 'react';
 //         </div>
 //     );
 // }
+
+
+// const desayuno = (callback) => {
+//   firebase.firestore().collection('PEDIDOS').onSnapshot((datos) => {
+//     const array = [];
+//     datos.forEach((doc) => {
+//       array.push({ id: doc.id, ...doc.data() });
+//     });
+//     callback(array);
+//   });
+// };
+
 function About() {
+  const [tipo, setTipo] = useState('desayuno');
+  const [productos, setProductos] = useState([]);
+  
+  const getProductos = () =>{
+    firebase.firestore().collection("productos").where('tipo','==',tipo).get().then(function(dato) {
+       const array = [];
+      dato.forEach(function(doc) {
+          array.push(doc.data());
+      });
+      setProductos(array)
+    });
+  }
+  useEffect(getProductos, [tipo])
   return (
         <div>
             <form>
@@ -32,11 +58,16 @@ function About() {
                 <input type="text"/>
                 </label>
                 <div>
-                <button type="button">DESAYUNO</button>
-                <button type="button">ALMUERZO  Y CENA</button>
+                <button type="button" onClick = {()=> {setTipo('desayuno')}}>DESAYUNO</button>
+                <button type="button" onClick = {()=> {setTipo('almuerzo')}}>ALMUERZO  Y CENA</button>
                 </div>
                 <input type="submit"/>
             </form>
+            <ul>
+              {productos.map((p)=>(
+                <li>{p.nombre}</li>
+              ))}
+            </ul>
         </div>
       );
   }
