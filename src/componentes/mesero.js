@@ -1,33 +1,40 @@
-import React from 'react';
-
-const Mesero = ({ item, precio, click }) => {
+import React, { useState, useEffect } from 'react';
+import firebase from './firebase';
+function About() {
+  const [tipo, setTipo] = useState('desayuno');
+  const [productos, setProductos] = useState([]);
+  
+  const getProductos = () =>{
+    firebase.firestore().collection("productos").where('tipo','==',tipo).get().then(function(dato) {
+       const array = [];
+      dato.forEach(function(doc) {
+          array.push(doc.data());
+      });
+      setProductos(array)
+    });
+  }
+  useEffect(getProductos, [tipo])
   return (
-    <div>
-      <form>
-        <label>NOMBRE DEL CLIENTE
-                <input type="text"/>
-        </label>
         <div>
-          <button type="button" onClick = {click} >DESAYUNO</button>
-          <button type="button">ALMUERZO  Y CENA</button>
+            <form>
+                <label>NOMBRE DEL CLIENTE
+                <input type="text"/>
+                </label>
+                <div>
+                <button type="button" onClick = {()=> {setTipo('desayuno')}}>DESAYUNO</button>
+                <button type="button" onClick = {()=> {setTipo('almuerzo')}}>ALMUERZO  Y CENA</button>
+                </div>
+                <input type="submit"/>
+            </form>
+            <ul>
+              {productos.map((p)=>(
+                <li>{p.nombre}</li>
+              ))}
+            </ul>
         </div>
-        <input type="submit" />
-      </form>
-      <h1>{item}</h1>
-      <h1>{precio}</h1>
-    </div>
-  );
-}
+      );
+  }
+  
 
-// const OpcionDesayuno = () => {
-//   const [item, precio] = useState('');
-//   return (
-//     <div>
-//       <h1>Item</h1>
-//       <Mesero item = "café" precio={precio} />
-//     </div>
-//   );
 
-// }
-
-export default Mesero;
+export default About;
