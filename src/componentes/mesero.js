@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
 function About() {
-  const [tipo, setTipo] = useState('desayuno');
+  const [name,setName] = useState('');
+  const [tipo, setTipo] = useState('');
   const [productos, setProductos] = useState([]);
   // const [categorias, setCategorias] = useState([]);
 
@@ -14,13 +15,22 @@ function About() {
       setProductos(array)
     });
   }
+  useEffect(getProductos, [tipo]);
+  
+  const handleNamChange = (e) => {
+    setName(e.target.value);
+    console.log(e.target.value);
+  }
 
-  useEffect(getProductos, [tipo])
   return (
     <div>
       <form>
         <label>NOMBRE DEL CLIENTE
-                <input type="text" />
+                {/* <input type="text" /> */}
+                <input type="text"
+                value={name}
+                onChange = {handleNamChange}
+                />
         </label>
         <div>
           <button type="button" onClick={() => { setTipo('desayuno') }}>DESAYUNO</button>
