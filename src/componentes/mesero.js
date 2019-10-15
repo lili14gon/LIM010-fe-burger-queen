@@ -19,7 +19,6 @@ function About() {
   
   const handleNamChange = (e) => {
     setName(e.target.value);
-    console.log(e.target.value);
   }
 
   return (
@@ -32,6 +31,7 @@ function About() {
                 onChange = {handleNamChange}
                 />
         </label>
+        <p>{name}</p>
         <div>
           <button type="button" onClick={() => { setTipo('desayuno') }}>DESAYUNO</button>
           <button type="button" id="almuerzo" onClick={(e) => { setTipo('almuerzo') }}>ALMUERZO  Y CENA</button>
