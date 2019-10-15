@@ -7,18 +7,8 @@ import {
 import Home from './componentes/inicio';
 import Mesero from './componentes/mesero';
 import Users from './componentes/jefecocina';
-import firebase from './componentes/firebase';
 
-export const Proyecto = () => {
-  firebase.firestore().collection('PEDIDOS').doc('desayuno').set({
-    CaféAmericano: 5,
-    CaféConLeche: 7,
-    SandwichDeJamón: 10,
-    JugoDeFrutas: 7,
-  })
-};
 export default function App() {
-  Proyecto();
   return (
     <Router>
       <div>
