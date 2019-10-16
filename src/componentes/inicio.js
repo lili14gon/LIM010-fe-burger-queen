@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import  Footer from './piezas/Footer';
 import Header from './piezas/Header';
+import '../App.css';
 function Home() {
     return (
-      <div> 
+      <div className="App-header"> 
       <Header/>
       <body> 
       <button ><Link to ="/about">MESERO</Link></button>
