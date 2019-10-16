@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
+import '../App.css'
+
 function About() {
   const [name,setName] = useState('');
   const [tipo, setTipo] = useState('');
@@ -22,7 +24,7 @@ function About() {
   }
 
   return (
-    <div>
+    <div className="App-header">
       <form>
         <label>NOMBRE DEL CLIENTE
                 {/* <input type="text" /> */}
@@ -32,6 +34,9 @@ function About() {
                 />
         </label>
         <p>{name}</p>
+        <div>
+          <p>{name}</p>
+        </div>
         <div>
           <button type="button" onClick={() => { setTipo('desayuno') }}>DESAYUNO</button>
           <button type="button" id="almuerzo" onClick={(e) => { setTipo('almuerzo') }}>ALMUERZO  Y CENA</button>
