@@ -3,7 +3,7 @@ import firebase from './firebase';
 import Header from '../componentes/piezas/Header';
 import Footer from '../componentes/piezas/Footer';
 
-import '../App.css'
+import '../css/App.css'
 
 function About() {
   const [name,setName] = useState('');
