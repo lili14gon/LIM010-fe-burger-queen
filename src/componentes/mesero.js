@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
-import Header from '../componentes/piezas/Header';
-import Footer from '../componentes/piezas/Footer';
+import Header from './piezas/Header';
+import Footer from './piezas/Footer';
+import Button from './piezas/button';
 import '../css/App.css'
 
 function About() {
   const [name, setName] = useState('');
-  const [tipo, setTipo] = useState('');
+  const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
   // const [categorias, setCategorias] = useState([]);
 
@@ -37,8 +38,8 @@ function About() {
               <input type="text" className="text-box mg-1" value={name} onChange={handleNamChange} />
             </label>
             <div className="row centered">
-              <button type="button" className="btn" onClick={() => { setTipo('desayuno') }}>DESAYUNO</button>
-              <button type="button" className="btn" id="almuerzo" onClick={(e) => { setTipo('almuerzo') }}>ALMUERZO  Y CENA</button>
+              <Button setTipoFnc={setTipo} titulo="Desayuno" tipo="desayuno" />
+              <Button setTipoFnc={setTipo} titulo="Almuerzo y Cena" tipo="almuerzo" />
             </div>
             {/* <div className="row centered">
               <button type="button" className="btn">HAMBURGUESA</button>
@@ -50,7 +51,6 @@ function About() {
                 <li>{p.nombre}</li>
               ))}
             </ul>
-            <button type="button" className="btn">Enviar Orden</button>
           </form>
         </div>
         <div className="col width-50 mg-1 center-item">
@@ -60,7 +60,7 @@ function About() {
             <div>
               <table className="mg-1">
                 <thead className="">
-                  <tr  className="">
+                  <tr className="">
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
@@ -77,10 +77,11 @@ function About() {
                 </tbody>
               </table>
             </div>
+            <button type="button" className="btn">Enviar Orden</button>
           </form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </React.Fragment>
   );
 }
