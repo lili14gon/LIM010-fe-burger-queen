@@ -1,51 +1,75 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
-.App {
-  text-align: center;
-}
+.btn, .form-box, .text-box {
+  height: max-content;
+  width: max-content;
+  padding: 1em;
+  border: none;
+  outline: none; }
 
-.App-logo {
-  height: 40vmin;
-}
+html, body {
+  font-family: "Quicksand", sans-serif;
+  height: 100%; }
 
-.App-header {
-  min-height: 100vh;
+header, footer {
+  height: 5em; }
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center; }
+
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; }
+
+.col {
+  display: flex;
+  flex-direction: column; }
+
+.centered {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center; }
 
-.App-link {
-  color: #09d3ac;
-}
+.even {
+  justify-content: space-evenly; }
 
-.App-col{
+.center-item {
+  align-items: center; }
+
+.footer {
+  flex-shrink: 0;
+  text-align: center; }
+
+.content {
+  flex: 1 0 auto; }
+
+.width-50 {
+  width: 50%; }
+
+.mg-1 {
+  margin: 1em; }
+
+.btn {
   display: flex;
-  flex-direction: column;
-}
-.Titulo{
-  color: red;
-}
-.Row{
-  display: flex;
-  flex-direction: row;
-}
-.Col{
-  display: flex;
-  flex-direction: column;
-}
-.Width-50{
-  width: 50%;
-}
-.Margin-1{
-  margin: 1em;
-}
-.bg{
-  background-color: blueviolet;
-}
-.Subtitle{
-  font-family: 'Quicksand', sans-serif;
-}
+  justify-content: center;
+  align-items: center;
+  border-radius: 2em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  margin: 1em; }
+
+.logo {
+  height: 3em; }
+
+.form-box {
+  background-color: #F78181; }
+
+.text-box {
+  border-radius: 1em; }
+
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,45 @@
+/*
+Error: Invalid CSS after "...&display=swap")": expected media query list, was ";"
+        on line 1 of output
+
+1: @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap");
+2: .App {
+3:   text-align: center; }
+4: 
+5: .App-logo {
+6:   height: 40vmin; }
+
+Backtrace:
+output:1
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1207:in `expected'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1137:in `expected'
+/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:74:in `parse_media_query_list'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:1039:in `parse_import_arg'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:998:in `block in parse_import_directive'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:997:in `loop'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:997:in `parse_import_directive'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:812:in `parse_directive'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:646:in `parse_line'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:536:in `build_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:555:in `block in append_children'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:554:in `each'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:554:in `append_children'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:409:in `_to_tree'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:381:in `_render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/engine.rb:298:in `render_with_sourcemap'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `each'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:294:in `watch'
+/usr/lib/ruby/vendor_ruby/sass/plugin.rb:109:in `method_missing'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:356:in `watch_or_update'
+/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:51:in `process_result'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:52:in `parse'
+/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:19:in `parse!'
+/usr/bin/sass:8:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...&display=swap\")\": expected media query list, was \";\"\A         on line 1 of output\A \A 1: @import url(\"https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap\");\A 2: .App {\A 3:   text-align: center; }\A 4: \A 5: .App-logo {\A 6:   height: 40vmin; }"; }

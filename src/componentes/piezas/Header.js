@@ -3,10 +3,10 @@ import Logo from './Logo';
 import '../../css/App.css'
 function Header() {
   return (
-        <div>
-       <p className="Titulo">Burguer Queen</p>
-       <Logo></Logo>
-        </div>
-      );
-  }
+    <header className=" row even center-item">
+      <p className="">Burguer Queen</p>
+      <Logo></Logo>
+    </header>
+  );
+}
 export default Header;
