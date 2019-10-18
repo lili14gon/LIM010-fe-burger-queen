@@ -1,10 +1,10 @@
 import React from 'react';
-
+import '../../css/App.css'
 function Footer() {
   return (
-        <div>
-       <p>@2019 Derechos Reservados</p>
-        </div>
-      );
-  }
+    <footer className="footer">
+      <p>@2019 Derechos Reservados</p>
+    </footer>
+  );
+}
 export default Footer;

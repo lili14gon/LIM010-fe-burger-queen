@@ -1,80 +1,75 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap");
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.btn, .form-box, .text-box {
+  height: max-content;
+  width: max-content;
+  padding: 1em;
+  border: none;
+  outline: none; }
+
+html, body {
+  font-family: "Quicksand", sans-serif;
+  height: 100%; }
+
+header, footer {
+  height: 5em; }
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
   text-align: center; }
 
-.App-logo {
-  height: 40vmin; }
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white; }
-
-.App-link {
-  color: #09d3ac; }
-
-.App-col {
-  display: flex;
-  flex-direction: column; }
-
-.Titulo {
-  color: red; }
-
-.Row {
+.row {
   display: flex;
   flex-direction: row; }
 
-.Col {
+.col {
   display: flex;
   flex-direction: column; }
 
-.Width-50 {
-  width: 50%; }
+.centered {
+  justify-content: center;
+  align-items: center; }
 
-.Margin-1 {
-  margin: 1em; }
+.even {
+  justify-content: space-evenly; }
 
-.bg {
-  background-color: blueviolet; }
+.center-item {
+  align-items: center; }
 
-.Subtitle {
-  font-family: 'Quicksand', sans-serif; }
-
-.App {
+.footer {
+  flex-shrink: 0;
   text-align: center; }
 
-.App-logo {
-  height: 40vmin; }
+.content {
+  flex: 1 0 auto; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.width-50 {
+  width: 50%; }
+
+.mg-1 {
+  margin: 1em; }
+
+.btn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white; }
+  align-items: center;
+  border-radius: 2em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  margin: 1em; }
 
-.App-link {
-  color: #09d3ac; }
+.logo {
+  height: 3em; }
 
-h1 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bolder;
-  color: blue; }
+.form-box {
+  background-color: #F78181; }
 
-h2 {
-  color: blue; }
-
-h3 {
-  color: aqua; }
-
-h4 {
-  color: cadetblue; }
+.text-box {
+  border-radius: 1em; }
 
 /*# sourceMappingURL=App.css.map */
