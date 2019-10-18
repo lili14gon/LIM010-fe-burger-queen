@@ -5,15 +5,15 @@ import Footer from '../componentes/piezas/Footer';
 
 import '../css/App.css';
 
-// function subMenu() {
-//   return(
-//     <div>
-//      <button type="button">HAMBURGUESA</button>
-//      <button type="button">ACOMPAÑAMIENTO</button>
-//      <button type="button">BEBIDAS</button>
-//    </div>
-//   );
-// }
+function subMenu() {
+  return(
+    <div>
+     <button type="button">HAMBURGUESA</button>
+     <button type="button">ACOMPAÑAMIENTO</button>
+     <button type="button">BEBIDAS</button>
+   </div>
+  );
+}
 
 function About() {
   const [name,setName] = useState('');
@@ -97,7 +97,7 @@ function About() {
             </div>
             <ul>
               {productos.map((p) => (
-                <li>{p.nombre}</li>
+                <li value = "1">{p.nombre}</li>
               ))}
             </ul>
           </form>
