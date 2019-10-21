@@ -4,6 +4,19 @@ import Header from '../componentes/piezas/Header';
 import Footer from '../componentes/piezas/Footer';
 import '../css/App.css'
 
+const MiBoton = ({ funcionDeSetearTipo, texto, tipo }) => (
+  <button type="button" className="btn" onClick={() => { funcionDeSetearTipo(tipo) }}>{texto}</button>
+);
+const subMenu = () =>
+  {
+    return (
+      <div className="row centered">
+    <button type="button" className="btn">HAMBURGUESA</button>
+    <button type="button" className="btn">ACOMPAÑAMIENTO</button>
+    <button type="button" className="btn">BEBIDAS</button>
+  </div>
+    ) 
+  }
 function About() {
   const [name, setName] = useState('');
   const [tipo, setTipo] = useState('');
@@ -25,47 +38,7 @@ function About() {
   const handleNamChange = (e) => {
     setName(e.target.value);
   }
-
-
-  // return (
-  //   <div className="App-header">
-  //     <form>
-  //       <label>NOMBRE DEL CLIENTE
-  //               {/* <input type="text" /> */}
-  //               <input type="text"
-  //               value={name}
-  //               onChange = {handleNamChange}
-  //               />
-  //       </label>
-  //   //    <p>{name}</p>
-  //       <div>
-  //         <p>{name}</p>
-  //       </div>
-  //       <div>
-  //         <button type="button" onClick={() => { setTipo('desayuno') }}>DESAYUNO</button>
-  //         <button type="button" id="almuerzo" onClick={(e) => { setTipo('almuerzo') }}>ALMUERZO  Y CENA</button>
-  //       </div>
-  //       <input type="submit" />
-  //     </form>
-      
-  //     {document.getElementById = "desayuno" ?
-  //       <div>
-  //       <button type="button">HAMBURGUESA</button>
-  //       <button type="button">ACOMPAÑAMIENTO</button>
-  //       <button type="button">BEBIDAS</button>
-  //     </div>
-  //       :
-  //       null
-  //     }
-  //     <ul>
-  //       {productos.map((p) => (
-  //         <li>{p.nombre}</li>
-  //       ))}
-  //     </ul>
-
-  //   </div>
-  // );
-
+ 
   return (
     <React.Fragment>
       <Header />
@@ -77,17 +50,19 @@ function About() {
               <input type="text" className="text-box mg-1" value={name} onChange={handleNamChange} />
             </label>
             <div className="row centered">
-              <button type="button" className="btn" onClick={() => { setTipo('desayuno') }}>DESAYUNO</button>
-              <button type="button" className="btn" id="almuerzo" onClick={(e) => { setTipo('almuerzo') }}>ALMUERZO  Y CENA</button>
+              <MiBoton funcionDeSetearTipo={setTipo} texto="DESAYUNO" tipo="desayuno" />
+              <MiBoton funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
+              {/* <MiBoton funcionDeSetearTipo={<MiBoton funcionDeSetearTipo={setTipo} texto="Hamburguesa" tipo="almuerzo" />} texto="ALMUERZO  Y CENA" tipo="almuerzo" /> */}
+              {/* <button type="button" className="btn" id="almuerzo" onClick={(e) => { subMenu() }}>ALMUERZO  Y CENA</button> */}
             </div>
             {/* <div className="row centered">
               <button type="button" className="btn">HAMBURGUESA</button>
               <button type="button" className="btn">ACOMPAÑAMIENTO</button>
-              <button type="button" className="btn">BEBIDAS</button>
+              <button type="button" className="btn">BEBIDAS</button> 
             </div> */}
             <ul>
               {productos.map((p) => (
-                <li value = "1">{p.nombre}</li>
+                <li value="1">{p.nombre}</li>
               ))}
             </ul>
             <button type="button" className="btn">Enviar Orden</button>
@@ -100,7 +75,7 @@ function About() {
             <div>
               <table className="mg-1">
                 <thead className="">
-                  <tr  className="">
+                  <tr className="">
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
@@ -120,7 +95,7 @@ function About() {
           </form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </React.Fragment>
   );
 
