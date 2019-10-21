@@ -1,28 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
-import Header from '../componentes/piezas/Header';
-import Footer from '../componentes/piezas/Footer';
+import Header from './piezas/Header';
+import Footer from './piezas/Footer';
+import Button from './piezas/button';
 import '../css/App.css'
 
-const MiBoton = ({ funcionDeSetearTipo, texto, tipo }) => (
-  <button type="button" className="btn" onClick={() => { funcionDeSetearTipo(tipo) }}>{texto}</button>
-);
-const subMenu = () =>
-  {
-    return (
-      <div className="row centered">
-    <button type="button" className="btn">HAMBURGUESA</button>
-    <button type="button" className="btn">ACOMPAÑAMIENTO</button>
-    <button type="button" className="btn">BEBIDAS</button>
-  </div>
-    ) 
-  }
 function About() {
   const [name, setName] = useState('');
   const [tipo, setTipo] = useState('');
   const [productos, setProductos] = useState([]);
-  // const [categorias, setCategorias] = useState([]);
-  // const menu = subMenu();
 
   const getProductos = () => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
@@ -50,10 +36,8 @@ function About() {
               <input type="text" className="text-box mg-1" value={name} onChange={handleNamChange} />
             </label>
             <div className="row centered">
-              <MiBoton funcionDeSetearTipo={setTipo} texto="DESAYUNO" tipo="desayuno" />
-              <MiBoton funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
-              {/* <MiBoton funcionDeSetearTipo={<MiBoton funcionDeSetearTipo={setTipo} texto="Hamburguesa" tipo="almuerzo" />} texto="ALMUERZO  Y CENA" tipo="almuerzo" /> */}
-              {/* <button type="button" className="btn" id="almuerzo" onClick={(e) => { subMenu() }}>ALMUERZO  Y CENA</button> */}
+              <Button setTipoFnc={setTipo} titulo="Desayuno" tipo="desayuno" />
+              <Button setTipoFnc={setTipo} titulo="Almuerzo y Cena" tipo="almuerzo" />
             </div>
             {/* <div className="row centered">
               <button type="button" className="btn">HAMBURGUESA</button>
@@ -65,7 +49,6 @@ function About() {
                 <li value="1">{p.nombre}</li>
               ))}
             </ul>
-            <button type="button" className="btn">Enviar Orden</button>
           </form>
         </div>
         <div className="col width-50 mg-1 center-item">
@@ -92,6 +75,7 @@ function About() {
                 </tbody>
               </table>
             </div>
+            <button type="button" className="btn">Enviar Orden</button>
           </form>
         </div>
       </div>
