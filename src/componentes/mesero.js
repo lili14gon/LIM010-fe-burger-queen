@@ -2,16 +2,24 @@ import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
 import Header from './piezas/Header';
 import Footer from './piezas/Footer';
-import Button from './piezas/button';
-import Cliente from './piezas/cliente';
 import '../css/App.css'
+import NombreCliente from './nombreCliente';
+import BotonOpciones from './BotonOpciones';
+import OrdenDetalles from './OrdenDetalles';
+import TituloPedidos from './TituloPedidos'
 
-function About() {
-  const [name, setName] = useState('');
-  const [tipo, setTipo] = useState('');
+
+const Mesero = () => {
+  const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
+  const [seleccionados, setSeleccionados] = useState([]);
+  const [name, setName] = useState('');
 
-  const getProductos = () => {
+  const Agregando = (e) => {
+    setSeleccionados(e.target.id);
+  }
+
+  useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
       const array = [];
       dato.forEach(function (doc) {
@@ -20,8 +28,7 @@ function About() {
       });
       setProductos(array)
     });
-  }
-  useEffect(getProductos, [tipo]);
+  }, [tipo]);
 
   return (
     <React.Fragment>
@@ -29,51 +36,22 @@ function About() {
       <div className="row">
         <div className="col width-50 mg-1 centered">
           <form className="form-box">
-            <h1 className="Subtitle">NUEVA ORDEN</h1>
-            <Cliente name = {name} setName={setName}/>
+            <TituloPedidos texto="NUEVA ORDEN " />
+            <NombreCliente name ={name} setName={setName} />
             <div className="row centered">
-              <Button setTipoFnc={setTipo} titulo="Desayuno" tipo="desayuno" />
-              <Button setTipoFnc={setTipo} titulo="Almuerzo y Cena" tipo="almuerzo" />
+              <BotonOpciones funcionDeSetearTipo={setTipo} texto="DESAYUNO" tipo="desayuno" />
+              <BotonOpciones funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
             </div>
-            {/* <div className="row centered">
-              <button type="button" className="btn">HAMBURGUESA</button>
-              <button type="button" className="btn">ACOMPAÑAMIENTO</button>
-              <button type="button" className="btn">BEBIDAS</button> 
-            </div> */}
-            <ul >
-              {productos.map((p) => (
-                <li key={p.nombre} value="p.nombre">{p.nombre}</li>
-              ))}
-            </ul>
+            {productos.map((p) => (
+              <div key={p.nombre} className="opcion-color" onClick={Agregando} id={p.nombre} >
+                {p.nombre} &nbsp;
+                 &nbsp;${p.precio}
+                <img className="tamaño-producto" src={p.url} alt="" />
+              </div>
+            ))}
           </form>
         </div>
-        <div className="col width-50 mg-1 center-item">
-          <form className="form-box">
-            <h1>DETALLES DE LA ORDEN</h1>
-            <label className="mg-1">Cliente:&nbsp;{name}</label>
-            <div>
-              <table className="mg-1">
-                <thead className="">
-                  <tr className="">
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Eliminar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <button type="button" className="btn">Enviar Orden</button>
-          </form>
-        </div>
+        <OrdenDetalles seleccionados={seleccionados} name ={name} />
       </div>
       <Footer />
     </React.Fragment>
@@ -81,4 +59,5 @@ function About() {
 
 }
 
-export default About;
+export default Mesero;
+
