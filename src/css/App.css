@@ -83,7 +83,7 @@ h1 {
 }
 
 .form-box {
-  background-color: #F781;
+background-color:#8BC34A;
 }
 
 .text-box {
@@ -91,5 +91,9 @@ h1 {
 }
 .tamaño-producto {
   height: 2em;
+}
+.opcion-color{
+  background-color: #FFEB3B;
+  margin: 10px;
 }
 /*# sourceMappingURL=App.css.map */

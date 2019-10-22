@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const [name, setName] = useState('');
-const NombreCliente = () => {
- 
+const NombreCliente = ({ name, setName }) => {
+
     const handleNamChange = (e) => {
         setName(e.target.value);
         console.log(e.target.value);
