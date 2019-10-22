@@ -3,6 +3,7 @@ import firebase from './firebase';
 import Header from './piezas/Header';
 import Footer from './piezas/Footer';
 import Button from './piezas/button';
+import Cliente from './piezas/cliente';
 import '../css/App.css'
 
 function About() {
@@ -15,16 +16,13 @@ function About() {
       const array = [];
       dato.forEach(function (doc) {
         array.push(doc.data());
+        console.log(array);
       });
       setProductos(array)
     });
   }
   useEffect(getProductos, [tipo]);
 
-  const handleNamChange = (e) => {
-    setName(e.target.value);
-  }
- 
   return (
     <React.Fragment>
       <Header />
@@ -32,9 +30,7 @@ function About() {
         <div className="col width-50 mg-1 centered">
           <form className="form-box">
             <h1 className="Subtitle">NUEVA ORDEN</h1>
-            <label className="row centered">Nombre del Cliente:
-              <input type="text" className="text-box mg-1" value={name} onChange={handleNamChange} />
-            </label>
+            <Cliente name = {name} setName={setName}/>
             <div className="row centered">
               <Button setTipoFnc={setTipo} titulo="Desayuno" tipo="desayuno" />
               <Button setTipoFnc={setTipo} titulo="Almuerzo y Cena" tipo="almuerzo" />
@@ -44,9 +40,9 @@ function About() {
               <button type="button" className="btn">ACOMPAÑAMIENTO</button>
               <button type="button" className="btn">BEBIDAS</button> 
             </div> */}
-            <ul>
+            <ul >
               {productos.map((p) => (
-                <li value="1">{p.nombre}</li>
+                <li key={p.nombre} value="p.nombre">{p.nombre}</li>
               ))}
             </ul>
           </form>
