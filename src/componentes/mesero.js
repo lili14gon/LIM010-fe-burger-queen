@@ -3,25 +3,21 @@ import firebase from './firebase';
 import Header from './piezas/Header';
 import Footer from './piezas/Footer';
 import '../css/App.css'
-import NombreCliente from './nombreCliente';
-import BotonOpciones from './BotonOpciones';
 import OrdenDetalles from './OrdenDetalles';
-import TituloPedidos from './TituloPedidos'
+import NuevaOrden from './NuevaOrden';
 
-
-// const Mesero = () => {
   const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
 
-  // const Agregando = (e) => {
-  //   setSeleccionados(e.target.id);
-  // }
-  const Agregando = (nuevoproducto) => {
-    setSeleccionados([...seleccionados,{...nuevoproducto}]);
+  const Agregando = (e) => {
+    setSeleccionados(e.target.id);
   }
+  // const Agregando = (nuevoproducto) => {
+  //   setSeleccionados([...seleccionados,{...nuevoproducto}]);
+  // }
 
   useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
@@ -37,25 +33,8 @@ import TituloPedidos from './TituloPedidos'
     <React.Fragment>
       <Header />
       <div className="row">
-        <div className="col width-50 mg-1 centered">
-          <form className="form-box">
-            <TituloPedidos texto="NUEVA ORDEN " />
-            <NombreCliente name ={name} setName={setName} />
-            <div className="row centered">
-              <BotonOpciones funcionDeSetearTipo={setTipo} texto="DESAYUNO" tipo="desayuno" />
-              <BotonOpciones funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
-            </div>
-            {productos.map((p) => (
-              // <div key={p.nombre} className="opcion-color" onClick={Agregando} id={p.nombre} >
-              <div key={p.nombre} className="opcion-color" onClick={() => Agregando()} >
-                {p.nombre} &nbsp;
-                 &nbsp;${p.precio}
-                <img className="tamaño-producto" src={p.url} alt="" />
-              </div>
-            ))}
-          </form>
-        </div>
-        <OrdenDetalles seleccionados={seleccionados} name ={name}  />
+        <NuevaOrden setTipo={setTipo} productos={productos} setName={setName} Agregando={Agregando} />
+        <OrdenDetalles seleccionados={seleccionados} name={name} />
       </div>
       <Footer />
     </React.Fragment>
@@ -64,4 +43,3 @@ import TituloPedidos from './TituloPedidos'
 }
 
 export default Mesero;
-
