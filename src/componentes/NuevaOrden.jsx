@@ -4,12 +4,24 @@ import NombreCliente from './nombreCliente';
 import BotonOpciones from './BotonOpciones';
 
 
-const NuevaOrden = ({name, setName, setTipo, productosDesayuno, seleccionados,setSeleccionados}) => {
-	
+const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, setSeleccionados }) => {
+
 	const Agregando = (nuevoproducto) => {
-		setSeleccionados([...seleccionados, { ...nuevoproducto }]);
-		}
-	
+		seleccionados.map((select) => {
+			if (select.nombre === nuevoproducto.nombre) {
+				select.cantidad = select.cantidad + 1;
+				return (
+					select
+				)
+			}else{
+				return(
+					select
+				)
+			}
+		})
+		setSeleccionados([...seleccionados, { ...nuevoproducto, cantidad: 1 }]);
+	}
+
 	return (
 		<div className="col width-50 mg-1 centered">
 			<form className="form-box">
@@ -20,8 +32,8 @@ const NuevaOrden = ({name, setName, setTipo, productosDesayuno, seleccionados,se
 					<BotonOpciones funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
 				</div>
 				{productosDesayuno.map((p) => (
-					<div key={p.nombre} className="opcion-color"  onClick={() => {Agregando(p) }} >
-					
+					<div key={p.nombre} className="opcion-color" onClick={() => { Agregando(p) }} >
+
 						{p.nombre} &nbsp;
                  &nbsp;${p.precio}
 						<img className="tamaño-producto" src={p.url} alt="" />
