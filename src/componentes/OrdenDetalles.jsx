@@ -27,12 +27,14 @@ export const OrdenDetalles = ({ seleccionados, name }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>{seleccionados}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                {seleccionados.map(p => (
+                  <tr key={p.nombre}>
+                    <td>{p.nombre}</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
