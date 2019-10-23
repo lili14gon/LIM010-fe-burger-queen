@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
-import Header from '../componentes/piezas/Header';
-import Footer from '../componentes/piezas/Footer';
+import Header from './piezas/Header';
+import Footer from './piezas/Footer';
+import Button from './piezas/button';
 import '../css/App.css'
 import NombreCliente from './nombreCliente';
 import BotonOpciones from './BotonOpciones';
@@ -51,7 +52,7 @@ const Mesero = () => {
               <div key={p.nombre} className="opcion-color" onClick ={()=>Agregando()} >
                 {p.nombre} &nbsp;
                  &nbsp;${p.precio}
-                <img className="tamaño-producto" src={p.url} alt=""/>
+                <img className="tamaño-producto" src={p.url} alt="" />
               </div>
             ))}
           </form>
@@ -59,7 +60,7 @@ const Mesero = () => {
         <OrdenDetalles seleccionados={seleccionados} name={name} />
       </div>
       <Footer />
-    </React.Fragment >
+    </React.Fragment>
   );
 }
 
