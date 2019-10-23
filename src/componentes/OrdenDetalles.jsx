@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/App.css';
 import TituloPedidos from './TituloPedidos';
-export const OrdenDetalles = ({seleccionados, name}) => {
+export const OrdenDetalles = ({seleccionados, name,agregar}) => {
   return (
     <React.Fragment>
       <div className="col width-50 mg-1 center-item">

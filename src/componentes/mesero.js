@@ -9,14 +9,18 @@ import OrdenDetalles from './OrdenDetalles';
 import TituloPedidos from './TituloPedidos'
 
 
-const Mesero = () => {
+// const Mesero = () => {
+  const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
 
-  const Agregando = (e) => {
-    setSeleccionados(e.target.id);
+  // const Agregando = (e) => {
+  //   setSeleccionados(e.target.id);
+  // }
+  const Agregando = (nuevoproducto) => {
+    setSeleccionados([...seleccionados,{...nuevoproducto}]);
   }
 
   useEffect(() => {
@@ -24,12 +28,11 @@ const Mesero = () => {
       const array = [];
       dato.forEach(function (doc) {
         array.push(doc.data());
-        console.log(array);
+        // console.log(array);
       });
       setProductos(array)
     });
   }, [tipo]);
-
   return (
     <React.Fragment>
       <Header />
@@ -43,7 +46,8 @@ const Mesero = () => {
               <BotonOpciones funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
             </div>
             {productos.map((p) => (
-              <div key={p.nombre} className="opcion-color" onClick={Agregando} id={p.nombre} >
+              // <div key={p.nombre} className="opcion-color" onClick={Agregando} id={p.nombre} >
+              <div key={p.nombre} className="opcion-color" onClick={() => Agregando()} >
                 {p.nombre} &nbsp;
                  &nbsp;${p.precio}
                 <img className="tamaño-producto" src={p.url} alt="" />
@@ -51,7 +55,7 @@ const Mesero = () => {
             ))}
           </form>
         </div>
-        <OrdenDetalles seleccionados={seleccionados} name ={name} />
+        <OrdenDetalles seleccionados={seleccionados} name ={name}  />
       </div>
       <Footer />
     </React.Fragment>
