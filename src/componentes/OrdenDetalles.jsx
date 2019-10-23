@@ -4,8 +4,6 @@ import TituloPedidos from './TituloPedidos';
 export const OrdenDetalles = ({ seleccionados, name }) => {
   const ArrayProductos = () => {
      const ListaProductos = [];
-
-
      ListaProductos.push(seleccionados);
      console.log(ListaProductos);
   }
@@ -20,19 +18,20 @@ export const OrdenDetalles = ({ seleccionados, name }) => {
             <table className="mg-1">
               <thead className="">
                 <tr className="">
-                  <th>Producto</th>
                   <th>Cantidad</th>
+                  <th>Producto</th>
                   <th>Precio</th>
-                  <th>Eliminar</th>
+                  <th>Total</th>
                 </tr>
               </thead>
               <tbody>
                 {seleccionados.map(p => (
                   <tr key={p.nombre}>
+                    <td> <input type="number" min="1" max="10" value ={p.cantidad}></input></td>
                     <td>{p.nombre}</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+                    <td>${p.precio}</td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 ))}
               </tbody>
