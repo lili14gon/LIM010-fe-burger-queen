@@ -1,12 +1,20 @@
 import React from 'react';
 import '../css/App.css';
 import TituloPedidos from './TituloPedidos';
-export const OrdenDetalles = ({seleccionados, name}) => {
+export const OrdenDetalles = ({ seleccionados, name }) => {
+  const ArrayProductos = () => {
+     const ListaProductos = [];
+
+
+     ListaProductos.push(seleccionados);
+     console.log(ListaProductos);
+  }
+  console.log(ArrayProductos());
   return (
     <React.Fragment>
       <div className="col width-50 mg-1 center-item">
         <form className="form-box">
-          <TituloPedidos texto="DETALLES DE LA ORDEN"/>
+          <TituloPedidos texto="DETALLES DE LA ORDEN" />
           <label className="mg-1">Cliente: &nbsp;{name}</label>
           <div>
             <table className="mg-1">
@@ -19,12 +27,14 @@ export const OrdenDetalles = ({seleccionados, name}) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>{seleccionados}</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
+                {seleccionados.map(p => (
+                  <tr key={p.nombre}>
+                    <td>{p.nombre}</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
