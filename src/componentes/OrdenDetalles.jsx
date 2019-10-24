@@ -22,6 +22,7 @@ export const OrdenDetalles = ({ seleccionados, name }) => {
                   <th>Producto</th>
                   <th>Precio</th>
                   <th>Total</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -30,8 +31,10 @@ export const OrdenDetalles = ({ seleccionados, name }) => {
                     <td> <input type="number" min="1" max="10" value ={p.cantidad}></input></td>
                     <td>{p.nombre}</td>
                     <td>${p.precio}</td>
-                    <td></td>
-                    <td></td>
+                    <td>${p.total}</td>
+                    <td>
+                      <button  type="button" value = {p.id}className="btn">X</button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
