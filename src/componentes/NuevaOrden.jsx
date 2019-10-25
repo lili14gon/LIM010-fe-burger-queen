@@ -25,11 +25,9 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 			setSeleccionados([...seleccionados, { ...nuevoproducto, cantidad: 1, total: nuevoproducto.precio }]);
 		}
 	}
-	// const Eliminar = (seleccionados) => {
-	// 	seleccionados.filter(element => element.id!== seleccionados.id )
-	// 	console.log(seleccionados)
-
-
+	// const Eliminar = (seleccionados, elegido) => {
+	// 	const NewArray = seleccionados.filter(element => element.id !== elegido)
+	// 	return NewArray;
 	// }
 	return (
 		<div className="col width-50 mg-1 centered">
@@ -51,9 +49,7 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 							))}
 						</div>
 					</div>
-
 				</div>
-
 			</form>
 		</div>
 	)
