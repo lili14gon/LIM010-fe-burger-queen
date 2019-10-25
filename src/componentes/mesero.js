@@ -6,7 +6,7 @@ import '../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
 
-const Mesero = () => {
+const Mesero = (Eliminar) => {
   const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
@@ -32,7 +32,7 @@ const Mesero = () => {
       <Header />
       <div className="row">
         <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados}  setSeleccionados={setSeleccionados}/>
-        <OrdenDetalles seleccionados={seleccionados} name={name} />
+        <OrdenDetalles seleccionados={seleccionados} name={name} id={Eliminar}/>
       </div>
       <Footer />
     </React.Fragment>
