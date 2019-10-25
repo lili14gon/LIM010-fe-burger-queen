@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0; }
 
-.btn, .form-box, .text-box {
+.btn, .text-box {
   height: max-content;
   width: max-content;
   padding: 1em;
@@ -67,9 +67,6 @@ h1 {
 .logo {
   height: 3em; }
 
-.form-box {
-  background-color: #F781; }
-
 .text-box {
   border-radius: 1em; }
 
@@ -85,5 +82,14 @@ td {
 table {
   border-collapse: collapse;
   border-spacing: 20px; }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .form-box {
+    height: max-content;
+    width: max-content;
+    padding: 1em;
+    border: none;
+    outline: none;
+    background-color: #F781; } }
 
 /*# sourceMappingURL=App.css.map */

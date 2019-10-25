@@ -13,8 +13,8 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 				return (
 					select
 				)
-			}else{
-				return(
+			} else {
+				return (
 					select
 				)
 			}
@@ -23,7 +23,7 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 	}
 
 	return (
-		<div className="col width-50 mg-1 centered">
+		<div className="col mg-1 center-item">
 			<form className="form-box">
 				<TituloPedidos texto="NUEVA ORDEN " />
 				<NombreCliente name={name} setName={setName} />

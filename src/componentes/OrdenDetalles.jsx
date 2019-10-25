@@ -10,7 +10,7 @@ export const OrdenDetalles = ({ seleccionados, name }) => {
   console.log(ArrayProductos());
   return (
     <React.Fragment>
-      <div className="col width-50 mg-1 center-item">
+      <div className="col mg-1 center-item">
         <form className="form-box">
           <TituloPedidos texto="DETALLES DE LA ORDEN" />
           <label className="mg-1">Cliente: &nbsp;{name}</label>

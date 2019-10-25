@@ -12,12 +12,16 @@ $primary: #F781;
   justify-content: center;
   align-items: center;
 }
-%container{
+@mixin container {
   height: max-content;
   width: max-content;
   padding: 1em;
   border: none;
   outline: none;
+  
+}
+%container{
+  @include container
 }
 html, body{
   font-family: $font;
@@ -73,10 +77,7 @@ h1{
 .logo{
   height:3em;
 }
-.form-box{
-  @extend %container;
-  background-color: $primary;
-}
+
 .text-box{
   @extend %container;
   border-radius: 1em;
