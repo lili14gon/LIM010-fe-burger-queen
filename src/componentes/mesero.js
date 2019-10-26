@@ -6,16 +6,13 @@ import '../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
 
-const Mesero = (Eliminar) => {
+const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
+  const [total, setTotal] = useState(0);
 
- 
-  // const Agregando = (e) => {
-  //   setSeleccionados(e.target.id);
-  // }
 
   useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
@@ -27,12 +24,14 @@ const Mesero = (Eliminar) => {
     });
   }, [tipo]);
 
+
+
   return (
     <React.Fragment>
       <Header />
       <div className="row">
-        <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados}  setSeleccionados={setSeleccionados}/>
-        <OrdenDetalles seleccionados={seleccionados} name={name} id={Eliminar}/>
+        <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
+        <OrdenDetalles seleccionados={seleccionados} name={name} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} Envio />
       </div>
       <Footer />
     </React.Fragment>
