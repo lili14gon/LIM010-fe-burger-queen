@@ -1,0 +1,43 @@
+// $laptop-desktop:1281px;
+// $tablet-portrait-i:1025px;
+// $tablet-portrait-f:1280px;
+// $tablet-landscape-i:768px;
+// $tablet-landscape-f:1024px;
+// $low-tablet-landscape-i:768px;
+// $low-tablet-landscape-f:1024px;
+// $mobile-portrait-i:481px;
+// $mobile-portrait-f:767px;
+// $others-i:320px;
+// $others-f:480px;
+
+// @media screen and (min-width: 200px) and (max-width: 767px) and (orientation: portrait) {
+//     body {
+//       transform: rotate(-90deg);
+//       transform-origin: left top;
+//       height: max-content;;
+//       width: max-content;
+//       overflow-x: hidden;
+//       position: absolute;
+//       top: 100%;
+//       left: 0;
+//     }
+//   }
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .form-box{
+        @include container;
+        background-color: $primary;
+      }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+@media (min-width: 1281px) {
+
+}

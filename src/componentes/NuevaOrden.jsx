@@ -5,6 +5,21 @@ import BotonOpciones from './BotonOpciones';
 
 const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, setSeleccionados}) => {
 	const Agregando = (nuevoproducto) => {
+<<<<<<< HEAD
+		seleccionados.map((select) => {
+			if (select.nombre === nuevoproducto.nombre) {
+				select.cantidad = select.cantidad + 1;
+				return (
+					select
+				)
+			} else {
+				return (
+					select
+				)
+			}
+		})
+		setSeleccionados([...seleccionados, { ...nuevoproducto, cantidad: 1 }]);
+=======
 		if (seleccionados.find(element => element.nombre === nuevoproducto.nombre)) {
 			const newArray = seleccionados.map((select) => {
 				if (select.nombre === nuevoproducto.nombre) {
@@ -24,11 +39,12 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 		} else {
 			setSeleccionados([...seleccionados, { ...nuevoproducto, cantidad: 1, total: nuevoproducto.precio }]);
 		}
+>>>>>>> 2a38cd1028af0cae94cd1ae961ac59ead3065a34
 	}
 
 
 	return (
-		<div className="col width-50 mg-1 centered">
+		<div className="col mg-1 center-item">
 			<form className="form-box">
 				<TituloPedidos texto="NUEVA ORDEN " />
 				<NombreCliente name={name} setName={setName} />
