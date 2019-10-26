@@ -2,7 +2,8 @@
 
 $font: 'Quicksand', sans-serif;
 $primary: #F781;
-$btn-color: #ff8000;
+$btn-color: #ffbc64;
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +24,9 @@ $btn-color: #ff8000;
 html, body{
   font-family: $font;
   height: 100%;
+}
+header{
+background-color: $btn-color;
 }
 header, footer{
   height: 5em;
