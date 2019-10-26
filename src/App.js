@@ -5,9 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import '../src/css/App.css'
-import Home from './componentes/inicio';
+import Home from './componentes/Home';
 import Mesero from './componentes/mesero';
-import Users from './componentes/jefecocina';
+import Cocina from './componentes/JefeCocina';
 
 export default function App() {
   return (
@@ -20,8 +20,8 @@ export default function App() {
             <Route path="/about">
               <Mesero />
             </Route>
-            <Route path="/users">
-              <Users />
+            <Route path="/cocina">
+              <Cocina/>
             </Route>
             <Route path="/">
               <Home />

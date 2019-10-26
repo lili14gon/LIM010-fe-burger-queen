@@ -5,6 +5,7 @@ import Footer from './piezas/Footer';
 import '../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
+import NavBar from './NavBar';
 
 const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');
@@ -29,6 +30,7 @@ const Mesero = () => {
   return (
     <React.Fragment>
       <Header />
+      <NavBar/>
       <div className="row">
         <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
         <OrdenDetalles seleccionados={seleccionados} name={name} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} Envio />
