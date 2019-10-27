@@ -1,7 +1,8 @@
 import React from 'react';
 import '../css/App.css';
 import TituloPedidos from './TituloPedidos';
-export const OrdenDetalles = ({seleccionados, name,agregar}) => {
+export const OrdenDetalles = ({seleccionados, name}) => {
+
   return (
     <React.Fragment>
       <div className="col width-50 mg-1 center-item">
@@ -19,12 +20,14 @@ export const OrdenDetalles = ({seleccionados, name,agregar}) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>{seleccionados}</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
+                {seleccionados.map(p => (
+                   <tr key={p.nombre}>
+                   <td>{p.nombre}</td>
+                   <td>{p.cantidad}</td>
+                   <td>{p.precio}</td>
+                   <td>4</td>
+                </tr> ))}
+               
               </tbody>
             </table>
           </div>

@@ -12,12 +12,10 @@ import NuevaOrden from './NuevaOrden';
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
 
-  const Agregando = (e) => {
-    setSeleccionados(e.target.id);
-  }
-  // const Agregando = (nuevoproducto) => {
-  //   setSeleccionados([...seleccionados,{...nuevoproducto}]);
+  // const Agregando = (e) => {
+  //   setSeleccionados(e.target.id);
   // }
+ 
 
   useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
@@ -33,7 +31,7 @@ import NuevaOrden from './NuevaOrden';
     <React.Fragment>
       <Header />
       <div className="row">
-        <NuevaOrden setTipo={setTipo} productos={productos} setName={setName} Agregando={Agregando} />
+        <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
         <OrdenDetalles seleccionados={seleccionados} name={name} />
       </div>
       <Footer />
