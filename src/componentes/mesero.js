@@ -6,7 +6,7 @@ import '../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
 import NavBar from './NavBar';
-import ListoParaServir from './ListoParaServir';
+// import ListoParaServir from './ListoParaServir';
 
 const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');

@@ -10,6 +10,7 @@ const NavBar = () => {
                     <button type="button" className="btn"><Link to="/about">Mesero</Link></button>
                     <button type="button" className="btn"><Link to="/cocina">Jefe de Cocina</Link></button>
                     <button type="button" className="btn"><Link to="/despacho">Listo para servir</Link></button>
+                    <button type="button" className="btn"><Link to="/finalizados">Entregados</Link></button>
                 </div>
             </div>
         </React.Fragment>

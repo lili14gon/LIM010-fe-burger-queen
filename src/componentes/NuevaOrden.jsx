@@ -3,7 +3,7 @@ import TituloPedidos from './TituloPedidos'
 import NombreCliente from './nombreCliente';
 import BotonOpciones from './BotonOpciones';
 
-const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, setSeleccionados}) => {
+const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, setSeleccionados }) => {
 	const Agregando = (nuevoproducto) => {
 		if (seleccionados.find(element => element.nombre === nuevoproducto.nombre)) {
 			const newArray = seleccionados.map((select) => {
@@ -39,14 +39,14 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 					<BotonOpciones funcionDeSetearTipo={setTipo} texto="EXTRAS" tipo="extra" />
 				</div>
 				<div className="row">
-						<div className=" text-center">
-							{productosDesayuno.map((p) => (
-								<div key={p.nombre} className="product" onClick={() => { Agregando(p) }} >
-									<img className="img-card" src={p.url} alt="" />
-									<h1 className="text-card border">{p.nombre} &nbsp; ${p.precio}</h1>
-								</div>
-							))}
-						</div>
+					<div className=" text-center">
+						{productosDesayuno.map((p) => (
+							<div key={p.nombre} className="product" onClick={() => { Agregando(p) }} >
+								<img className="img-card" src={p.url} alt="" />
+								<h1 className="text-card border">{p.nombre} &nbsp; ${p.precio}</h1>
+							</div>
+						))}
+					</div>
 				</div>
 			</form>
 		</div>

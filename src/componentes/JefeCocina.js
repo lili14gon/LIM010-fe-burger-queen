@@ -5,14 +5,13 @@ import PedidosCocina from './PedidosCocina';
 import NavBar from './NavBar';
 
 const Cocina = () => {
-  
   return (
     <React.Fragment>
       <Header />
-      <NavBar/>
+      <NavBar />
       <div>
         <h1>Pedidos</h1>
-        <PedidosCocina/>
+        <PedidosCocina />
       </div>
       <Footer />
     </React.Fragment>

@@ -9,6 +9,7 @@ import Home from './componentes/Home';
 import Mesero from './componentes/mesero';
 import Cocina from './componentes/JefeCocina';
 import ListoParaServir from "./componentes/ListoParaServir";
+import Entregados from "./componentes/Entregados";
 
 export default function App() {
   return (
@@ -26,6 +27,9 @@ export default function App() {
             </Route>
             <Route path="/despacho">
               <ListoParaServir />
+            </Route>
+            <Route path="/finalizados">
+              <Entregados/>
             </Route>
             <Route path="/">
               <Home />

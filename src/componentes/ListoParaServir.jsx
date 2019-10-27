@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import firebase from './firebase';
-import '../css/App.css';
 import Header from './piezas/Header';
 import Footer from './piezas/Footer';
 import NavBar from './NavBar';
+import '../css/App.css';
 
 const ListoParaServir = () => {
-	const [pedidos, setPedidos] = useState([]);
+	const [servir, setServir] = useState([]);
 
 	const getListos = () => {
 		firebase.firestore().collection("orden").where('estado', '==', 'pendiente').get().then(dato => {
@@ -14,17 +14,17 @@ const ListoParaServir = () => {
 			dato.forEach(doc => {
 				array.push(doc.data());
 			});
-			setPedidos(array)
+			setServir(array)
 		});
 	}
 	useEffect(getListos);
 
 	return (
 		<React.Fragment>
-			<Header/>
-			<NavBar/>
+			<Header />
+			<NavBar />
 			<h1>Listo para servir</h1>
-			{pedidos.map((p) => (
+			{servir.map((p) => (
 				<div key={p.cliente} className="row center-item">
 					<div className="product col" >
 						<p>Cliente: {p.cliente}</p>
@@ -50,7 +50,7 @@ const ListoParaServir = () => {
 					</div>
 				</div>
 			))}
-			<Footer/>
+			<Footer />
 		</React.Fragment>
 	);
 }
