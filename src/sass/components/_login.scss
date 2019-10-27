@@ -2,6 +2,8 @@
 
 $font: 'Quicksand', sans-serif;
 $primary: #F781;
+$btn-color: #ffbc64;
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -12,16 +14,23 @@ $primary: #F781;
   justify-content: center;
   align-items: center;
 }
-%container{
+@mixin container {
   height: max-content;
   width: max-content;
   padding: 1em;
   border: none;
   outline: none;
+  
+}
+%container{
+  @include container
 }
 html, body{
   font-family: $font;
   height: 100%;
+}
+header{
+background-color: $btn-color;
 }
 header, footer{
   height: 5em;
@@ -56,9 +65,6 @@ h1{
 .content {
   flex: 1 0 auto;
 }
-.width-50{
-  width: 50%;
-}
 .mg-1{
   margin: 1em;
 }
@@ -69,18 +75,14 @@ h1{
   font-family: $font;
   font-weight: 500;
   margin: 1em;
+  background-color: $btn-color;
+
 }
 .logo{
   height:3em;
 }
-.form-box{
-  @extend %container;
-  background-color: $primary;
-}
+
 .text-box{
   @extend %container;
   border-radius: 1em;
-}
-.tamaño-producto{
-  height: 2em;
 }
