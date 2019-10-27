@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './piezas/Header';
-import Footer from './piezas/Footer';
+import Header from '../piezas/Header';
+import Footer from '../piezas/Footer';
 import PedidosCocina from './PedidosCocina';
-import NavBar from './NavBar';
-import TituloPedidos from './TituloPedidos';
+import NavBar from '../piezas/NavBar';
+import TituloPedidos from '../piezas/TituloPedidos';
 
 const Cocina = () => {
   return (

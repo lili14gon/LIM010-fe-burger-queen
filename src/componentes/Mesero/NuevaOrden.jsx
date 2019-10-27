@@ -1,14 +1,14 @@
 import React from 'react';
-import TituloPedidos from './TituloPedidos'
+import TituloPedidos from '../piezas/TituloPedidos'
 import NombreCliente from './nombreCliente';
-import BotonOpciones from './BotonOpciones';
+import BotonOpciones from '../BotonOpciones';
 
 const NuevaOrden = ({ name, setName, setTipo, productos, seleccionados, setSeleccionados }) => {
 
 	const Agregando = (nuevoproducto) => {
-		if (seleccionados.find(element => element.nombre === nuevoproducto.nombre)) {
+		if (seleccionados.find(element => element.id === nuevoproducto.id)) {
 			const newArray = seleccionados.map((select) => {
-				if (select.nombre === nuevoproducto.nombre) {
+				if (select.id === nuevoproducto.id) {
 					select.cantidad = select.cantidad + 1;
 					select.total = select.precio * select.cantidad;
 					return (

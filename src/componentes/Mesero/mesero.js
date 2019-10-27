@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import firebase from './firebase';
-import Header from './piezas/Header';
-import Footer from './piezas/Footer';
-import '../css/App.css'
+import firebase from '../firebase';
+import Header from '../piezas/Header';
+import Footer from '../piezas/Footer';
+import '../../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
-import NavBar from './NavBar';
+import NavBar from '../piezas/NavBar';
 // import ListoParaServir from './ListoParaServir';
 
 const Mesero = () => {
@@ -20,8 +20,8 @@ const Mesero = () => {
       .get()
       .then(dato => {
         const array = [];
-        dato.forEach(function (doc) {
-          array.push(doc.data());
+        dato.forEach(doc => {
+          array.push({id:doc.id, ...doc.data()});
         });
         setProductos(array)
       })

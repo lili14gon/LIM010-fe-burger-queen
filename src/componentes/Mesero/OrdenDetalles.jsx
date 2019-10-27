@@ -1,7 +1,8 @@
 import React from 'react';
-import firebase from './firebase';
-import '../css/App.css';
-import TituloPedidos from './TituloPedidos';
+import firebase from '../firebase';
+import '../../css/App.css';
+import TituloPedidos from '../piezas/TituloPedidos';
+
 export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal, total }) => {
   const Eliminar = (elegido) => {
     const productosEliminados = seleccionados.filter(element => element.nombre !== elegido)
@@ -13,14 +14,18 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
   }
 
   const Envio = () => {
-    const añadirOrden = firebase.firestore().collection("orden").add({
-      cliente: name,
-      hora:new Date(),
-      total: total,
-      productos: seleccionados.map((element)=>({producto:element.nombre, cantidad: element.cantidad, subtotal:element.total})),
-      estado: 'pendiente',
-      //nombre: seleccionados.nombre,
-    });
+    const añadirOrden = firebase.firestore()
+      .collection("orden")
+      .add({
+        cliente: name,
+        hora: new Date(),
+        preparación: 0,
+        total: total,
+        productos: seleccionados.map((element) => ({ producto: element.nombre, cantidad: element.cantidad, subtotal: element.total })),
+        estado: 'pendiente',
+        //nombre: seleccionados.nombre,
+      })
+      .then(res => alert('Se envió tu pedido a cocina'));
     return añadirOrden;
   }
 
@@ -43,10 +48,10 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
               </thead>
               <tbody>
                 {seleccionados.map(p => (
-                  <tr key={p.nombre}>
+                  <tr key={p.id}>
                     {/* <td> <input type="number" min="1" max="10" value={p.cantidad}></input></td> */}
                     {/* <td><label>{p.cantidad}</label></td> */}
-                    <td><textarea value={p.cantidad} disabled></textarea></td>
+                    <td><textarea defaultValue={p.cantidad} disabled></textarea></td>
                     <td>{p.nombre}</td>
                     <td>${p.precio}</td>
                     <td>${p.total}</td>
@@ -59,7 +64,7 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
               </tbody>
             </table>
 
-            <label>TOTAL<textarea onChange={TotalPedidos()} value={total} /></label>
+            <label>TOTAL<textarea onChange={TotalPedidos()} defaultValue={total} /></label>
           </div>
           <div>
             <button type="button" className="btn" onClick={() => { Envio(name) }}>ENVIAR</button>
