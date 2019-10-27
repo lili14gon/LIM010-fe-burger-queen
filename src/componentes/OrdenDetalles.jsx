@@ -16,7 +16,9 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
     const añadirOrden = firebase.firestore().collection("orden").add({
       cliente: name,
       hora:new Date(),
-      productos: seleccionados.map((element)=>({producto:element.nombre, cantidad: element.cantidad, total:element.total}))
+      total: total,
+      productos: seleccionados.map((element)=>({producto:element.nombre, cantidad: element.cantidad, subtotal:element.total})),
+      estado: 'pendiente',
       //nombre: seleccionados.nombre,
     });
     return añadirOrden;
@@ -60,7 +62,7 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
             <label>TOTAL<textarea onChange={TotalPedidos()} value={total} /></label>
           </div>
           <div>
-            <button className="btn" onClick={() => { Envio(name) }}>ENVIAR</button>
+            <button type="button" className="btn" onClick={() => { Envio(name) }}>ENVIAR</button>
           </div>
         </form>
       </div>

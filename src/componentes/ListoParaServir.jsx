@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import firebase from './firebase';
+import '../css/App.css';
+import Header from './piezas/Header';
+import Footer from './piezas/Footer';
+import NavBar from './NavBar';
 
-const PedidosCocina = () => {
+const ListoParaServir = () => {
 	const [pedidos, setPedidos] = useState([]);
-	const [listo, setListo] = useState('pendiente');
 
-	const getPedidos = () => {
-		firebase.firestore().collection("orden").orderBy('hora', 'asc').get().then(dato => {
+	const getListos = () => {
+		firebase.firestore().collection("orden").where('estado', '==', 'pendiente').get().then(dato => {
 			const array = [];
 			dato.forEach(doc => {
 				array.push(doc.data());
@@ -14,10 +17,13 @@ const PedidosCocina = () => {
 			setPedidos(array)
 		});
 	}
-	useEffect(getPedidos, [listo]);
+	useEffect(getListos);
 
 	return (
 		<React.Fragment>
+			<Header/>
+			<NavBar/>
+			<h1>Listo para servir</h1>
 			{pedidos.map((p) => (
 				<div key={p.cliente} className="row center-item">
 					<div className="product col" >
@@ -39,14 +45,13 @@ const PedidosCocina = () => {
 							</tbody>
 						</table>
 						<p>Hora de Pedido: {p.hora.toDate().getHours()}{':'}{p.hora.toDate().getMinutes()}</p>
+						<p>Tiempo de preparación : </p>
 						<p>Total a pagar: {p.total}</p>
-					</div>
-					<div>
-						<button type="button" className="btn col" onClick={(e) => { setListo('listo') }}>Terminado</button>
 					</div>
 				</div>
 			))}
-		</React.Fragment >
+			<Footer/>
+		</React.Fragment>
 	);
 }
-export default PedidosCocina;
+export default ListoParaServir;

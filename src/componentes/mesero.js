@@ -6,6 +6,7 @@ import '../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
 import NavBar from './NavBar';
+import ListoParaServir from './ListoParaServir';
 
 const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');
@@ -13,7 +14,6 @@ const Mesero = () => {
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
   const [total, setTotal] = useState(0);
-
 
   useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
@@ -25,8 +25,6 @@ const Mesero = () => {
     });
   }, [tipo]);
 
-
-
   return (
     <React.Fragment>
       <Header />
@@ -34,6 +32,7 @@ const Mesero = () => {
       <div className="row">
         <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
         <OrdenDetalles seleccionados={seleccionados} name={name} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} Envio />
+        {/* <ListoParaServir/> */}
       </div>
       <Footer />
     </React.Fragment>

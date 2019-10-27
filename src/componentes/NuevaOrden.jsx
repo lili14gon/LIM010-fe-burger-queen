@@ -35,6 +35,8 @@ const NuevaOrden = ({ name, setName, setTipo, productosDesayuno, seleccionados, 
 				<div className="row centered">
 					<BotonOpciones funcionDeSetearTipo={setTipo} texto="DESAYUNO" tipo="desayuno" />
 					<BotonOpciones funcionDeSetearTipo={setTipo} texto="ALMUERZO  Y CENA" tipo="almuerzo" />
+					<BotonOpciones funcionDeSetearTipo={setTipo} texto="BEBIDAS" tipo="bebidas" />
+					<BotonOpciones funcionDeSetearTipo={setTipo} texto="EXTRAS" tipo="extra" />
 				</div>
 				<div className="row">
 						<div className=" text-center">

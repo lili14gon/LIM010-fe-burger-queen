@@ -5,6 +5,7 @@ import PedidosCocina from './PedidosCocina';
 import NavBar from './NavBar';
 
 const Cocina = () => {
+  
   return (
     <React.Fragment>
       <Header />
