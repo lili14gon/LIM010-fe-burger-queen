@@ -3,7 +3,6 @@ import firebase from './firebase';
 
 const PedidosCocina = () => {
 	const [pedidos, setPedidos] = useState([]);
-	const [listo, setListo] = useState('pendiente');
 
 	const getPedidos = () => {
 		firebase.firestore().collection("orden").orderBy('hora', 'asc').get().then(dato => {
@@ -14,7 +13,13 @@ const PedidosCocina = () => {
 			setPedidos(array)
 		});
 	}
-	useEffect(getPedidos, [listo]);
+	useEffect(getPedidos);
+
+	const Terminado = (id) => {
+		firebase.firestore().collection("orden").doc(id).update({
+			estado: 'listo'
+		});
+	}
 
 	return (
 		<React.Fragment>
@@ -42,7 +47,7 @@ const PedidosCocina = () => {
 						<p>Total a pagar: {p.total}</p>
 					</div>
 					<div>
-						<button type="button" className="btn col" onClick={(e) => { setListo('listo') }}>Terminado</button>
+						<button type="button" className="btn col" onClick={() => { Terminado(p.id) }}>Terminado</button>
 					</div>
 				</div>
 			))}

@@ -16,21 +16,26 @@ const Mesero = () => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    firebase.firestore().collection("productos").where('tipo', '==', tipo).get().then(function (dato) {
-      const array = [];
-      dato.forEach(function (doc) {
-        array.push(doc.data());
+    firebase.firestore().collection("productos").where('tipo', '==', tipo)
+      .get()
+      .then(dato => {
+        const array = [];
+        dato.forEach(function (doc) {
+          array.push(doc.data());
+        });
+        setProductos(array)
+      })
+      .catch(error => {
+        console.log("Error getting documents: ", error);
       });
-      setProductos(array)
-    });
   }, [tipo]);
 
   return (
     <React.Fragment>
       <Header />
-      <NavBar/>
+      <NavBar />
       <div className="row">
-        <NuevaOrden setTipo={setTipo} productosDesayuno={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
+        <NuevaOrden setTipo={setTipo} productos={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
         <OrdenDetalles seleccionados={seleccionados} name={name} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} Envio />
         {/* <ListoParaServir/> */}
       </div>

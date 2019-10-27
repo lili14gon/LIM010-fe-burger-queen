@@ -3,6 +3,7 @@ import Header from './piezas/Header';
 import Footer from './piezas/Footer';
 import PedidosCocina from './PedidosCocina';
 import NavBar from './NavBar';
+import TituloPedidos from './TituloPedidos';
 
 const Cocina = () => {
   return (
@@ -10,7 +11,7 @@ const Cocina = () => {
       <Header />
       <NavBar />
       <div>
-        <h1>Pedidos</h1>
+        <TituloPedidos texto="Pedidos"/>
         <PedidosCocina />
       </div>
       <Footer />
