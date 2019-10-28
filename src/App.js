@@ -6,8 +6,10 @@ import {
 } from "react-router-dom";
 import '../src/css/App.css'
 import Home from './componentes/Home';
-import Mesero from './componentes/mesero';
-import Cocina from './componentes/JefeCocina';
+import Mesero from './componentes/Mesero/mesero';
+import Cocina from './componentes/Jefe de Cocina/JefeCocina';
+import ListoParaServir from "./componentes/Mesero/ListoParaServir";
+import Entregados from "./componentes/Mesero/Entregados";
 
 export default function App() {
   return (
@@ -22,6 +24,12 @@ export default function App() {
             </Route>
             <Route path="/cocina">
               <Cocina/>
+            </Route>
+            <Route path="/despacho">
+              <ListoParaServir />
+            </Route>
+            <Route path="/finalizados">
+              <Entregados/>
             </Route>
             <Route path="/">
               <Home />

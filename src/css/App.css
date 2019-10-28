@@ -16,8 +16,7 @@ html, body {
   height: 100%; }
 
 header {
-  background-color: #ffbc64;
-}
+  background-color: #ffbc64; }
 
 header, footer {
   height: 5em; }
@@ -63,8 +62,7 @@ h1 {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   margin: 1em;
-  background-color: #ffbc64;
-}
+  background-color: #ffbc64; }
 
 .logo {
   height: 3em; }
@@ -84,8 +82,7 @@ table {
 
 .product {
   background-color: #f7dfb1;
-  margin: 10px;
-}
+  margin: 10px; }
 
 .text-card {
   font-size: 1.5rem; }
