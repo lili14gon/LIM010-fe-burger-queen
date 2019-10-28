@@ -3,6 +3,10 @@
 $font: 'Quicksand', sans-serif;
 $primary: #F781;
 $btn-color: #ffbc64;
+$home-color:#fce5bc;
+.color-body{
+ background-color: $home-color;
+}
 
 *{
   box-sizing: border-box;
