@@ -5,7 +5,6 @@ import Footer from '../piezas/Footer';
 import '../../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
-import NavBar from '../piezas/NavBar';
 // import ListoParaServir from './ListoParaServir';
 
   const Mesero = () => {
@@ -33,9 +32,8 @@ import NavBar from '../piezas/NavBar';
   return (
     <React.Fragment>
       <Header />
-      <NavBar />
       <div className="row">
-        <NuevaOrden setTipo={setTipo} productos={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
+        <NuevaOrden setTipo={setTipo} productos={productos}  name={name} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
         <OrdenDetalles seleccionados={seleccionados} name={name} setName={setName} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} />
         {/* <ListoParaServir/> */}
       </div>
