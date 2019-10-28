@@ -1,17 +1,14 @@
 import React from 'react';
-import TiempoDePreparacion from '../piezas/TiempoDePreparación';
+// import TiempoDePreparacion from '../piezas/TiempoDePreparación';
 import firebase from '../firebase';
 
 // const FormatoPedido = ({ origen, CambiarEstado, texto,id }) => {
-	const FormatoPedido = ({ origen, texto }) => {
-
-	const CambiarEstado = (id) => {
-		firebase.firestore().collection("orden").doc(id).update({
-			estado: 'listo',
-			preparación: Date.now(),
-		});
-	}
-
+const FormatoPedidoServir = ({ origen, texto }) => {		
+	const Entregar = (id) => {
+	firebase.firestore().collection("orden").doc(id).update({
+	estado: 'entregado',
+	});
+   }
 		return (
 			<React.Fragment>
 				{origen.map((p) => (
@@ -35,15 +32,16 @@ import firebase from '../firebase';
 								</tbody>
 							</table>
 							<p>Hora de Pedido: {p.hora.toDate().getHours()}{':'}{p.hora.toDate().getMinutes()}{':'}{p.hora.toDate().getSeconds()}</p>
-							<TiempoDePreparacion p = {p}/>
+							<p>tiempo de preparacion: </p>
+							{/* <TiempoDePreparacion p = {p}/> */}
 							<p>Total a pagar: {p.total}</p>
 						</div>
 						<div>
-							<button type="button" className="btn col" onClick={() => { CambiarEstado(p.id) }}>{texto}</button>
+							<button type="button" className="btn col" onClick={() => { Entregar(p.id) }}>{texto}</button>
 						</div>
 					</div>
 				))}
 			</React.Fragment>
 		);
 	}
-	export default FormatoPedido;
+	 export default FormatoPedidoServir;

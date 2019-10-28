@@ -36,7 +36,7 @@ import NavBar from '../piezas/NavBar';
       <NavBar />
       <div className="row">
         <NuevaOrden setTipo={setTipo} productos={productos} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
-        <OrdenDetalles seleccionados={seleccionados} name={name} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} Envio />
+        <OrdenDetalles seleccionados={seleccionados} name={name} setName={setName} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} />
         {/* <ListoParaServir/> */}
       </div>
       <Footer />
