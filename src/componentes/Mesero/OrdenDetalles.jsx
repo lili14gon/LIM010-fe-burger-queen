@@ -3,7 +3,7 @@ import firebase from '../firebase';
 import '../../css/App.css';
 import TituloPedidos from '../piezas/TituloPedidos';
 
-export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal, total }) => {
+export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal, total,setName }) => {
   const Eliminar = (elegido) => {
     const productosEliminados = seleccionados.filter(element => element.nombre !== elegido)
     return setSeleccionados(productosEliminados);
@@ -25,7 +25,13 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
         estado: 'pendiente',
         //nombre: seleccionados.nombre,
       })
-      .then(res => alert('Se envió tu pedido a cocina'));
+      // .then((res) => {alert('Se envió tu pedido a cocina');
+      //                 seleccionados('')} 
+      //             );
+      .then(() => { 
+        setSeleccionados([]);
+        setName('');
+      });
     return añadirOrden;
   }
 
@@ -67,7 +73,7 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
             <label>TOTAL<textarea onChange={TotalPedidos()} defaultValue={total} /></label>
           </div>
           <div>
-            <button type="button" className="btn" onClick={() => { Envio(name) }}>ENVIAR</button>
+            <button type="button" className="btn" onClick={() => { Envio() }}>ENVIAR</button>
           </div>
         </form>
       </div>
