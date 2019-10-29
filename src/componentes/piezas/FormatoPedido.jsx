@@ -1,11 +1,6 @@
 import React from 'react';
 import TiempoDePreparacion from '../piezas/TiempoDePreparación';
 import firebase from '../firebase';
-import { DateTime } from "luxon";
-const  horaPrueba=DateTime.local().offset ;
-const ofset = DateTime.utc().offset;
-console.log(ofset);
-console.log(horaPrueba);
 
 // const FormatoPedido = ({ origen, CambiarEstado, texto,id }) => {
 
@@ -15,12 +10,10 @@ const FormatoPedido = ({ origen, texto }) => {
 	const CambiarEstado = (id) => {
 		firebase.firestore().collection("orden").doc(id).update({
 			estado: 'listo',
-			preparación: Date.now(),
+			preparación: new Date(),
 
 		});
 	}
-
-
 	return (
 		<React.Fragment>
 			{origen.map((p) => (
@@ -44,7 +37,6 @@ const FormatoPedido = ({ origen, texto }) => {
 							</tbody>
 						</table>
 						<p>Hora de Pedido: {p.hora.toDate().getHours()}{':'}{p.hora.toDate().getMinutes()}{':'}{p.hora.toDate().getSeconds()}</p>
-						<TiempoDePreparacion p={p} />
 						<p>Total a pagar: {p.total}</p>
 					</div>
 					<div>
