@@ -107,6 +107,7 @@ table {
 .product {
   background-color: #f7dfb1;
   margin: 10px;
+  width: 41%;
 }
 
 .text-card {
@@ -115,6 +116,8 @@ table {
 
 .text-center {
   text-align: center !important;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .img-card {
