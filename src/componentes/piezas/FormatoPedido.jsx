@@ -9,9 +9,9 @@ import firebase from '../firebase';
 		firebase.firestore().collection("orden").doc(id).update({
 			estado: 'listo',
 			preparación: Date.now(),
+			//  preparación:new Date().getTime(),
 		});
 	}
-
 		return (
 			<React.Fragment>
 				{origen.map((p) => (
