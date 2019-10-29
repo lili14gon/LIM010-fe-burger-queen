@@ -13,6 +13,7 @@ import NuevaOrden from './NuevaOrden';
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
   const [total, setTotal] = useState(0);
+ 
 
   useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo)

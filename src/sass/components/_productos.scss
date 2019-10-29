@@ -3,12 +3,15 @@ $product: #f7dfb1;
 .product{
 background-color: $product;
 margin: 10px;
+width: 41%;
 }
 .text-card{
     font-size: 1.5rem;
 }
-.text-center{
-    text-align: center!important;
+.text-center {
+    text-align: center !important;
+    display: flex;
+    flex-wrap: wrap;
 }
 .img-card{
     width: 20%;
