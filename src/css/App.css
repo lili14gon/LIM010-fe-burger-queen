@@ -1,58 +1,76 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap");
+.color-body {
+  background-color: #fce5bc;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
-.btn, .text-box {
+.text-box, .btn {
   height: max-content;
   width: max-content;
   padding: 1em;
   border: none;
-  outline: none; }
+  outline: none;
+}
 
 html, body {
   font-family: "Quicksand", sans-serif;
-  height: 100%; }
+  height: 100%;
+}
 
 header {
-  background-color: #ffbc64; }
+  background-color: #ffbc64;
+}
 
 header, footer {
-  height: 5em; }
+  height: 5em;
+}
 
 h1 {
   font-size: 2em;
   font-weight: 600;
-  text-align: center; }
+  text-align: center;
+}
 
 .row {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 .col {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .centered {
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .even {
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+}
 
 .center-item {
-  align-items: center; }
+  align-items: center;
+}
 
 .footer {
   flex-shrink: 0;
-  text-align: center; }
+  text-align: center;
+}
 
 .content {
-  flex: 1 0 auto; }
+  flex: 1 0 auto;
+}
 
 .mg-1 {
-  margin: 1em; }
+  margin: 1em;
+}
 
 .btn {
   display: flex;
@@ -62,42 +80,57 @@ h1 {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   margin: 1em;
-  background-color: #ffbc64; }
+  background-color: #ffbc64;
+}
 
 .logo {
-  height: 3em; }
+  height: 3em;
+}
 
 .text-box {
-  border-radius: 1em; }
+  border-radius: 1em;
+}
 
 table {
-  border: #b2b2b2 1px solid; }
+  border: #b2b2b2 1px solid;
+}
 
 td {
-  border: black 1px solid; }
+  border: black 1px solid;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 20px; }
+  border-spacing: 20px;
+}
 
 .product {
   background-color: #f7dfb1;
-  margin: 10px; }
+  margin: 10px;
+  width: 41%;
+}
 
 .text-card {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+}
 
 .text-center {
-  text-align: center !important; }
+  text-align: center !important;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .img-card {
-  width: 20%; }
+  width: 20%;
+}
 
 .border {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .flex-wrap {
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .form-box {
@@ -106,6 +139,8 @@ table {
     padding: 1em;
     border: none;
     outline: none;
-    background-color: #F781; } }
+    background-color: #F781;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */
