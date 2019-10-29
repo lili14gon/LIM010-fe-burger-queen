@@ -1,4 +1,6 @@
 import React from 'react';
+import { DateTime } from 'luxon';
+DateTime.local();
 const TiempoDePreparacion = ({ p }) => (
 
         <p>{Date(p.preparación).toString()}</p>

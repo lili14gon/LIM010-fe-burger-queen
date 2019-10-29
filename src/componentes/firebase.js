@@ -2,13 +2,13 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDCm5JWgQ3Vm4X2a7Q7ZCz6aqOp1gHcTzI",
-    authDomain: "burger-queen-react-bls.firebaseapp.com",
-    databaseURL: "https://burger-queen-react-bls.firebaseio.com",
-    projectId: "burger-queen-react-bls",
-    storageBucket: "burger-queen-react-bls.appspot.com",
-    messagingSenderId: "658478814346",
-    appId: "1:658478814346:web:f4bf5219e89878fd114973"
+    apiKey: "AIzaSyBrSc0xN5TTG2riYkrJ9a2zQ5uyfETj5oo",
+    authDomain: "burguer-queen2.firebaseapp.com",
+    databaseURL: "https://burguer-queen2.firebaseio.com",
+    projectId: "burguer-queen2",
+    storageBucket: "burguer-queen2.appspot.com",
+    messagingSenderId: "951018599209",
+    appId: "1:951018599209:web:d260f2b9ce84d6b7247d38"
 };
 firebase.initializeApp(firebaseConfig);
 
