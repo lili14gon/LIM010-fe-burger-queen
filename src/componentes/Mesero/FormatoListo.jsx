@@ -1,5 +1,4 @@
 import React from 'react';
-import TiempoDemora from '../piezas/TiempoDemora';
 import firebase from '../firebase';
 
 // const FormatoPedido = ({ origen, CambiarEstado, texto,id }) => {
@@ -33,7 +32,6 @@ const FormatoPedidoServir = ({ origen, texto }) => {
 							</table>
 							<p>Hora de Pedido: {p.hora.toDate().getHours()}{':'}{p.hora.toDate().getMinutes()}{':'}{p.hora.toDate().getSeconds()}</p>
 							{/* <p>tiempo de preparacion: </p> */}
-							<TiempoDemora p = {p}/>
 							<p>Total a pagar: {p.total}</p>
 						</div>
 						<div>
