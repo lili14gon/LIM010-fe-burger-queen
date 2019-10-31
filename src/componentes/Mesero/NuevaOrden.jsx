@@ -42,8 +42,9 @@ const NuevaOrden = ({ name, setName, setTipo, productos, seleccionados, setSelec
 					<div className=" text-center">
 						{productos.map(p => (
 							<div key={p.id} className="product" onClick={() => { Agregando(p) }} >
-								<h1 className="text-card border">{p.nombre} &nbsp; ${p.precio}</h1>
 								<img className="img-card" src={p.url} alt="imagenes de comida" />
+								<h1 className="text-card border">{p.nombre} </h1>
+								<h1 className="text-card border"> ${p.precio}</h1>
 							</div>
 						))}
 					</div>

@@ -1,12 +1,19 @@
 $product: #f7dfb1;
 
 .product{
-background-color: $product;
 margin: 10px;
 width: 41%;
+border: $pedido-color solid 1px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding-top: 15px;
+text-align: center;
+
 }
 .text-card{
     font-size: 1.5rem;
+    font-family: 'BlockBeCnPro', Arial, Helvetica, sans-serif;
 }
 .text-center {
     text-align: center !important;
@@ -14,11 +21,19 @@ width: 41%;
     flex-wrap: wrap;
 }
 .img-card{
-    width: 20%;
+    width: 45%;
 }
 .border{
     box-sizing: border-box;
 }
 .flex-wrap{
     flex-wrap:wrap;
+}
+.color-item{
+    background-color:$btn-color;
+}
+.colum-pedidos{
+    display: flex;
+    flex-direction: row;
+    width:50%;
 }

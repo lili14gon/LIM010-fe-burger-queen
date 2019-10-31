@@ -44,7 +44,7 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
           <div>
             <table className="mg-1">
               <thead className="">
-                <tr className="">
+                <tr >
                   <th>Cantidad</th>
                   <th>Producto</th>
                   <th>Precio</th>

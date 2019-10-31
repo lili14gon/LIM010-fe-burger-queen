@@ -1,5 +1,4 @@
 import React from 'react';
-import TiempoDePreparacion from '../piezas/TiempoDePreparación';
 import firebase from '../firebase';
 
 // const FormatoPedido = ({ origen, CambiarEstado, texto,id }) => {

@@ -5,15 +5,16 @@ import Footer from '../piezas/Footer';
 import '../../css/App.css'
 import OrdenDetalles from './OrdenDetalles';
 import NuevaOrden from './NuevaOrden';
+import Opciones from '../piezas/Opciones';
 // import ListoParaServir from './ListoParaServir';
 
-  const Mesero = () => {
+const Mesero = () => {
   const [tipo, setTipo] = useState('desayuno');
   const [productos, setProductos] = useState([]);
   const [seleccionados, setSeleccionados] = useState([]);
   const [name, setName] = useState('');
   const [total, setTotal] = useState(0);
- 
+
 
   useEffect(() => {
     firebase.firestore().collection("productos").where('tipo', '==', tipo)
@@ -21,7 +22,7 @@ import NuevaOrden from './NuevaOrden';
       .then(dato => {
         const array = [];
         dato.forEach(doc => {
-          array.push({id:doc.id, ...doc.data()});
+          array.push({ id: doc.id, ...doc.data() });
         });
         setProductos(array)
       })
@@ -33,10 +34,13 @@ import NuevaOrden from './NuevaOrden';
   return (
     <React.Fragment>
       <Header />
-      <div className="row">
-        <NuevaOrden setTipo={setTipo} productos={productos}  name={name} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} />
-        <OrdenDetalles seleccionados={seleccionados} name={name} setName={setName} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} />
-        {/* <ListoParaServir/> */}
+      <Opciones />
+      <div className="column-pedidos" >
+
+          <div><NuevaOrden setTipo={setTipo} productos={productos} name={name} setName={setName} seleccionados={seleccionados} setSeleccionados={setSeleccionados} /></div>
+          <div>
+            <OrdenDetalles seleccionados={seleccionados} name={name} setName={setName} setSeleccionados={setSeleccionados} setTotal={setTotal} total={total} />
+          </div>
       </div>
       <Footer />
     </React.Fragment>
