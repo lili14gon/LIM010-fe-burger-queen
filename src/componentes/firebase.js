@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCm5JWgQ3Vm4X2a7Q7ZCz6aqOp1gHcTzI",
+    apiKey: "AIzaSyDCm5JWgQ3Vm4X2a7Q7ZCz6aqOp1gHcTzI",
   authDomain: "burger-queen-react-bls.firebaseapp.com",
   databaseURL: "https://burger-queen-react-bls.firebaseio.com",
   projectId: "burger-queen-react-bls",

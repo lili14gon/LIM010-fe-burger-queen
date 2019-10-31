@@ -2,8 +2,12 @@
 
 $font: 'Quicksand', sans-serif;
 $primary: #F781;
-$btn-color: #ffbc64;
+$btn-color:#ffb500;
+$btn-color2:#2E2A25;
 $home-color:#fce5bc;
+$pedido-color:#4f372f;
+$letra-color:#ffff;
+$principal:#ffda7f;
 .color-body{
  background-color: $home-color;
 }
@@ -85,7 +89,11 @@ h1{
 .logo{
   height:3em;
 }
-
+.fondo{
+  background-image: url("https://www.animalgourmet.com/wp-content/uploads/2016/07/hamburguesa.jpg");
+  height: 400px;
+  background-repeat: no-repeat;
+}
 .text-box{
   @extend %container;
   border-radius: 1em;
