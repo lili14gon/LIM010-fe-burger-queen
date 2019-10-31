@@ -29,8 +29,8 @@ const FormatoEntregados = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
+                                <th className="color-item">Producto</th>
+                                <th className="color-item">Cantidad</th>
                             </tr>
                         </thead>
                         <tbody>

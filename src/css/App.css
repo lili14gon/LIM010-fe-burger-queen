@@ -23,7 +23,7 @@ html, body {
 }
 
 header {
-  background-color: #ffbc64;
+  background-color: #ffb500;
 }
 
 header, footer {
@@ -80,11 +80,17 @@ h1 {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   margin: 1em;
-  background-color: #ffbc64;
+  background-color: #ffb500;
 }
 
 .logo {
   height: 3em;
+}
+
+.fondo {
+  background-image: url("https://www.animalgourmet.com/wp-content/uploads/2016/07/hamburguesa.jpg");
+  height: 400px;
+  background-repeat: no-repeat;
 }
 
 .text-box {
@@ -105,13 +111,19 @@ table {
 }
 
 .product {
-  background-color: #f7dfb1;
   margin: 10px;
   width: 41%;
+  border: #4f372f solid 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding-top: 15px;
+  text-align: center;
 }
 
 .text-card {
   font-size: 1.5rem;
+  font-family: "BlockBeCnPro", Arial, Helvetica, sans-serif;
 }
 
 .text-center {
@@ -121,7 +133,7 @@ table {
 }
 
 .img-card {
-  width: 20%;
+  width: 45%;
 }
 
 .border {
@@ -130,6 +142,16 @@ table {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.color-item {
+  background-color: #ffb500;
+}
+
+.colum-pedidos {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
