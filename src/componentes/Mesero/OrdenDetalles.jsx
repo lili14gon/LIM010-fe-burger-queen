@@ -23,11 +23,7 @@ export const OrdenDetalles = ({ seleccionados, name, setSeleccionados, setTotal,
         total: total,
         productos: seleccionados.map((element) => ({ producto: element.nombre, cantidad: element.cantidad, subtotal: element.total })),
         estado: 'pendiente',
-        //nombre: seleccionados.nombre,
       })
-      // .then((res) => {alert('Se envió tu pedido a cocina');
-      //                 seleccionados('')} 
-      //             );
       .then(() => { 
         setSeleccionados([]);
         setName('');
