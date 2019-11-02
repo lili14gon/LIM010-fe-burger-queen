@@ -1,9 +1,19 @@
 import React from 'react';
-import NombreCliente from 'react-dom';
-import { render, fireEvent, waitForElement } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react'
+import NombreCliente from '../../componentes/Mesero/NombreCliente';
 
+test('El input debería estar vacio al principio', (done) => {
+    const setName = (value) => {
+        expect(value).toBe('nombre cliente');
+        done();
+    }
 
-it('NombreCliente',() => {
-    const { queryByTestId } = render(<NombreCliente/>);
-    expect(queryByTestId()).toBe(null); 
-} )
+    const { getByTestId } = render(<NombreCliente setName={setName} name="valor inicial"/>)
+    
+    let inputNombrecliente = getByTestId("inputNombreCliente");
+    expect(inputNombrecliente.value).toBe('valor inicial');
+
+    act(() => {
+        fireEvent.change(inputNombrecliente, { target: { value: 'nombre cliente' } });
+    })
+})
